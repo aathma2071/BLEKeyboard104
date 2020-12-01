@@ -15,10 +15,10 @@ Firmware for ESP32 based devkit boards.
 - Possibily better support for iOS and Android
 
 ## Building
--- clone or download the repository.
--- Open the repository in Platform IO
--- open src/main.cpp and run build.
--- Upload the code to connected ESP-32 Board
+- clone or download the repository.
+- Open the repository in Platform IO
+- open src/main.cpp and run build.
+- Upload the code to connected ESP-32 Board
 
 ## TODO
 - [ ] Implement a key map/matrix generator
