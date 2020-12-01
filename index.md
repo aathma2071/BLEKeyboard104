@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+Firmware for ESP32 based devkit boards.
 
-You can use the [editor on GitHub](https://github.com/rajumakantham/BLEKeyboard104/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Why this project?
+Well, I had a cheap and busted mechanical keyboard which I did not want to throw away just because it is a mechanical keyboard (Although the key switches are not that great). Initially I thought of salvaging the key switches to make some kind of bluetooth macro keyboard that can be used in tandem with my main keyboard. However I did not have the time nor patience to design a keyboard for my needs, instead I thought of converting the entire 104 key standard keyboard to wireless via ESP32.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**This project is still early in development and not all listed features are present**
 
-### Markdown
+## Features
+- 2 layers (1 layer for standard keyboard layout and the other for Fn modified functions)
+- Software debouncing
+- Macros
+- In device macro management
+- support for OLED or LCD screens
+- Support for media keys
+- Support for OTA firmware updates
+- Possibily better support for iOS and Android
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Building
+- clone or download the repository.
+- Open the repository in Platform IO
+- open src/main.cpp and run build.
+- Upload the code to connected ESP-32 Board
 
-```markdown
-Syntax highlighted code block
+## TODO
+- [ ] Implement a key map/matrix generator
+- [ ] Implement a key matrix scanner
+- [x] Implement BLE connectivity
+- [ ] Implement screen functionality
+- [ ] Implement Macro functionality
+- [ ] Implement Keyboard modes (basically for setting the macros or updating the firmware)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rajumakantham/BLEKeyboard104/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Credits and thanks to:
+- Asterics for a detailed implementation of esp_32_mouse keyboard: https://github.com/asterics/esp32_mouse_keyboard/blob/master/README.md
+- T-vK for the awesome ESP32 BLE Keyboard library: https://github.com/T-vK/ESP32-BLE-Keyboard
+- BAN0008 for an arduino based keyboard firmware: https://github.com/BAN0008/Keyboard-Firmware
