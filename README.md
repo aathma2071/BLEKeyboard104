@@ -28,7 +28,14 @@ Firmware for ESP32 based devkit boards.
 - [ ] Implement Macro functionality
 - [ ] Implement Keyboard modes (basically for setting the macros or updating the firmware)
 
+
+## Current key matrix pin config
+
+
+
 ## Credits and thanks to:
 - Asterics for a detailed implementation of esp_32_mouse keyboard: https://github.com/asterics/esp32_mouse_keyboard/blob/master/README.md
 - T-vK for the awesome ESP32 BLE Keyboard library: https://github.com/T-vK/ESP32-BLE-Keyboard
 - BAN0008 for an arduino based keyboard firmware: https://github.com/BAN0008/Keyboard-Firmware
+- rokrodic for usb keyboard firmware: https://github.com/rokrodic/USB-Keyboard
+- blahlicus for an awesome keyboard firmware: https://github.com/blahlicus/animus-family
