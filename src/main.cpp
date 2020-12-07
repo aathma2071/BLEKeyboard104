@@ -14,7 +14,7 @@ SSD1306Wire display(0x3c, 18, 19);
 
 OLEDDisplayUi ui(&display);
 
-const uint8_t PHYSDELAY = 40;
+const uint8_t PHYSDELAY = 160;
 const uint8_t BATLEVEL = 5;
 
 uint16_t physicalDelay = 0;
@@ -111,7 +111,6 @@ void drawBattery(uint16_t x,uint16_t y,uint16_t level)
   for (uint16_t i = 0; i <= level; i++)
   {
     uint16_t xVal = x+3 + (4 * (i - 1));
-    Serial.println(xVal);
     display.fillRect(xVal, y + 4, 2, 10);
   }
 }
