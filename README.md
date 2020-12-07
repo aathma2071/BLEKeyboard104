@@ -24,7 +24,7 @@ Firmware for ESP32 based devkit boards.
 - [ ] Implement a key map/matrix generator
 - [ ] Implement a key matrix scanner
 - [x] Implement BLE connectivity
-- [ ] Implement screen functionality
+- [x] Implement screen functionality
 - [ ] Implement Macro functionality
 - [ ] Implement Keyboard modes (basically for setting the macros or updating the firmware)
 
