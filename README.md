@@ -6,13 +6,14 @@ Firmware for ESP32 based devkit boards.
 
 ## Features
 - 2 layers (1 layer for standard keyboard layout and the other for Fn modified functions)
-- Software debouncing
+- Software debouncing (still not decided between hardware and software debouncing)
 - Macros
 - In device macro management
-- support for OLED or LCD screens
+- support for OLED screens (SSD1306 primarily)
 - Support for media keys
-- Support for OTA firmware updates
+- Support for OTA firmware updates - not sure how this can be acheived as certain pins will not work if WiFi is turned on.
 - Possibily better support for iOS and Android
+- Multi-device support
 
 ## Building
 - clone or download the repository.
@@ -27,6 +28,7 @@ Firmware for ESP32 based devkit boards.
 - [x] Implement screen functionality
 - [ ] Implement Macro functionality
 - [ ] Implement Keyboard modes (basically for setting the macros or updating the firmware)
+- [ ] Multi device support
 
 
 ## Current key matrix pin config
@@ -39,3 +41,4 @@ Firmware for ESP32 based devkit boards.
 - BAN0008 for an arduino based keyboard firmware: https://github.com/BAN0008/Keyboard-Firmware
 - rokrodic for usb keyboard firmware: https://github.com/rokrodic/USB-Keyboard
 - blahlicus for an awesome keyboard firmware: https://github.com/blahlicus/animus-family
+- MightyPork for the USB-HID-Keys reference
