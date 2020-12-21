@@ -13,7 +13,7 @@ Firmware for ESP32 based devkit boards.
 - Support for media keys
 - Support for OTA firmware updates - not sure how this can be acheived as certain pins will not work if WiFi is turned on.
 - Possibily better support for iOS and Android
-- Multi-device support
+- Multi-device support (with the current espressif library, a bit hard to do)
 
 ## Building
 - clone or download the repository.
@@ -22,13 +22,13 @@ Firmware for ESP32 based devkit boards.
 - Upload the code to connected ESP-32 Board
 
 ## TODO
-- [ ] Implement a key map/matrix generator
-- [ ] Implement a key matrix scanner
+- [x] Implement a key matrix scanner
 - [x] Implement BLE connectivity
 - [x] Implement screen functionality
 - [ ] Implement Macro functionality
 - [ ] Implement Keyboard modes (basically for setting the macros or updating the firmware)
 - [ ] Multi device support
+- [ ] Implement MCP23017 i2c io expander functionality for scanning\
 
 
 ## Current key matrix pin config
