@@ -4,12 +4,17 @@
 #include "SSD1306Wire.h"
 #include "OLEDDisplayUi.h"
 #include "jeeno/BLE/BLEKeyboard.h"
+#include <Adafruit_MCP23017.h>
 
 #define BATLEVEL 5
 #define PHYSDELAY 60
 
 //Keyboard library
 BLEKeyboard bleKeyboard("2071", "aathma2071", 100, false);
+
+//for io mux-demux
+Adafruit_MCP23017 mcpr;
+Adafruit_MCP23017 mcpc;
 
 //For OLED Screen
 SSD1306Wire display(pinouts.I2C_ADDRESS,pinouts.PIN_SDA,pinouts.PIN_SCL);
@@ -26,13 +31,16 @@ void setup(){
     Serial.write("Started Serial Monitoring in 9600 bauds");
 #endif
 
+    mcpr.begin();
+    mcpc.begin();
+
     for (uint8_t i = 0; i < ROWS; i++)
     {
-        pinMode(keymap.rowp[i], INPUT);
+        mcpr.pinMode(keymap.rowp[i], INPUT);
     }
     for (uint8_t i = 0; i < COLS; i++)
     {
-        pinMode(keymap.colp[i], OUTPUT);
+        mcpc.pinMode(keymap.colp[i], OUTPUT);
     }
 
     for (uint8_t i = 0; i < ROWS; i++)
@@ -49,7 +57,7 @@ void setup(){
     ui.setIndicatorDirection(LEFT_RIGHT);
     ui.init();
     display.flipScreenVertically();
-
+    
     bleKeyboard.connect(1); // handle multiple servers
 }
 
@@ -59,17 +67,17 @@ void scanMatrix()
     //re-initialize the row pins. From keypad.h
     for (uint8_t i = 0; i < ROWS; i++)
     {
-        pinMode(keymap.rowp[i], INPUT);
+        mcpr.pinMode(keymap.rowp[i], INPUT);
     }
 
     for (uint8_t col = 0; col < COLS; col++)
     {
-        pinMode(keymap.colp[col], OUTPUT);
-        digitalWrite(keymap.colp[col], HIGH);
+        mcpc.pinMode(keymap.colp[col], OUTPUT);
+        mcpc.digitalWrite(keymap.colp[col], HIGH);
 
         for (uint8_t row = 0; row < ROWS; row++)
         {
-            bool pressedKeyState = digitalRead(keymap.rowp[row]);
+            bool pressedKeyState = mcpr.digitalRead(keymap.rowp[row]);
             if (pressedKeyState != keystates[row][col])
             {
                 keystates[row][col] = pressedKeyState;
@@ -88,8 +96,8 @@ void scanMatrix()
                 }
             }
         }
-        digitalWrite(keymap.colp[col], LOW);
-        pinMode(keymap.colp[col], INPUT);
+        mcpc.digitalWrite(keymap.colp[col], LOW);
+        mcpc.pinMode(keymap.colp[col], INPUT);
     }
 }
 

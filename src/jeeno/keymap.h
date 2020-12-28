@@ -19,15 +19,16 @@
 class JKeymap
 {
 public:
-    const uint8_t rowp[ROWS] = {pinouts.PIN_36, pinouts.PIN_39, pinouts.PIN_34, pinouts.PIN_35, pinouts.PIN_32, pinouts.PIN_33, pinouts.PIN_25, pinouts.PIN_26, pinouts.PIN_27, pinouts.PIN_14, pinouts.PIN_12, pinouts.PIN_13};
-    const uint8_t colp[COLS] = {pinouts.PIN_22, pinouts.PIN_3, pinouts.PIN_21, pinouts.PIN_19, pinouts.PIN_18, pinouts.PIN_5, pinouts.PIN_17, pinouts.PIN_16, pinouts.PIN_4, pinouts.PIN_2, pinouts.PIN_15};
+    const uint8_t rowp[ROWS] = {pinouts.GPA0,pinouts.GPA1,pinouts.GPA2,pinouts.GPA3,pinouts.GPA4,pinouts.GPA5,pinouts.GPA6,pinouts.GPA7,pinouts.GPB0,pinouts.GPB1,pinouts.GPB2,pinouts.GPB3};
+    const uint8_t colp[COLS] = {pinouts.GPA0,pinouts.GPA1,pinouts.GPA2,pinouts.GPA3,pinouts.GPA4,pinouts.GPA5,pinouts.GPA6,pinouts.GPA7,pinouts.GPB0,pinouts.GPB1,pinouts.GPB2};
 
 //debouncing delay
 
 
     /* switch matrix scan codes -  refer to HIDKeys.h for a complete referemce of the
 scan codes. This has to be updated in tandem to the wiring of the keyboard */
-    const uint8_t SCAN_CODES[ROWS][COLS] = {{HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_F2, HIDKeys.BLE_KEY_F4, HIDKeys.BLE_KEY_F6, HIDKeys.BLE_KEY_F8, HIDKeys.BLE_KEY_F10, HIDKeys.BLE_KEY_F12, HIDKeys.BLE_KEY_SCROLLLOCK, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE},
+    const uint8_t SCAN_CODES[ROWS][COLS] = {
+                                      {HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_F2, HIDKeys.BLE_KEY_F4, HIDKeys.BLE_KEY_F6, HIDKeys.BLE_KEY_F8, HIDKeys.BLE_KEY_F10, HIDKeys.BLE_KEY_F12, HIDKeys.BLE_KEY_SCROLLLOCK, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE},
                                       {HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_1, HIDKeys.BLE_KEY_3, HIDKeys.BLE_KEY_5, HIDKeys.BLE_KEY_7, HIDKeys.BLE_KEY_9, HIDKeys.BLE_KEY_MINUS, HIDKeys.BLE_KEY_BACKSPACE, HIDKeys.BLE_KEY_HOME, HIDKeys.BLE_KEY_NUMLOCK, HIDKeys.BLE_KEY_KPASTERISK},
                                       {HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_Q, HIDKeys.BLE_KEY_E, HIDKeys.BLE_KEY_T, HIDKeys.BLE_KEY_U, HIDKeys.BLE_KEY_O, HIDKeys.BLE_KEY_LEFTBRACE, HIDKeys.BLE_KEY_BACKSLASH, HIDKeys.BLE_KEY_END, HIDKeys.BLE_KEY_KP7, HIDKeys.BLE_KEY_KP9},
                                       {HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_A, HIDKeys.BLE_KEY_D, HIDKeys.BLE_KEY_G, HIDKeys.BLE_KEY_J, HIDKeys.BLE_KEY_L, HIDKeys.BLE_KEY_APOSTROPHE, HIDKeys.BLE_KEY_ENTER, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_KP4, HIDKeys.BLE_KEY_KP6},
@@ -38,7 +39,8 @@ scan codes. This has to be updated in tandem to the wiring of the keyboard */
                                       {HIDKeys.BLE_KEY_TAB, HIDKeys.BLE_KEY_W, HIDKeys.BLE_KEY_R, HIDKeys.BLE_KEY_Y, HIDKeys.BLE_KEY_I, HIDKeys.BLE_KEY_P, HIDKeys.BLE_KEY_RIGHTBRACE, HIDKeys.BLE_KEY_DELETE, HIDKeys.BLE_KEY_PAGEDOWN, HIDKeys.BLE_KEY_KP8, HIDKeys.BLE_KEY_KPPLUS},
                                       {HIDKeys.BLE_KEY_CAPSLOCK, HIDKeys.BLE_KEY_S, HIDKeys.BLE_KEY_F, HIDKeys.BLE_KEY_H, HIDKeys.BLE_KEY_K, HIDKeys.BLE_KEY_SEMICOLON, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_KP5, HIDKeys.BLE_KEY_NONE},
                                       {HIDKeys.BLE_KEY_LEFTSHIFT, HIDKeys.BLE_KEY_X, HIDKeys.BLE_KEY_V, HIDKeys.BLE_KEY_N, HIDKeys.BLE_KEY_COMMA, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_KP2, HIDKeys.BLE_KEY_KPENTER},
-                                      {HIDKeys.BLE_KEY_LEFTCTRL, HIDKeys.BLE_KEY_LEFTALT, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_RIGHTMETA, HIDKeys.BLE_KEY_LEFT, HIDKeys.BLE_KEY_RIGHT, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE}};
+                                      {HIDKeys.BLE_KEY_LEFTCTRL, HIDKeys.BLE_KEY_LEFTALT, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_RIGHTMETA, HIDKeys.BLE_KEY_LEFT, HIDKeys.BLE_KEY_RIGHT, HIDKeys.BLE_KEY_NONE, HIDKeys.BLE_KEY_NONE}
+                                      };
 };
 
 extern JKeymap keymap;

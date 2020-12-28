@@ -6,7 +6,6 @@
 class JPinouts
 {
 public:
-
     //for OLED screen
     uint8_t I2C_ADDRESS = 0x3c;
     uint8_t PIN_SDA = 0;
@@ -39,9 +38,25 @@ public:
     uint8_t PIN_33 = 33;
     uint8_t PIN_34 = 34;
     uint8_t PIN_35 = 35;
-    ;
     uint8_t PIN_36 = 36;
     uint8_t PIN_39 = 39;
+
+    uint8_t GPA0 = 0;
+    uint8_t GPA1 = 1;
+    uint8_t GPA2 = 2;
+    uint8_t GPA3 = 3;
+    uint8_t GPA4 = 4;
+    uint8_t GPA5 = 5;
+    uint8_t GPA6 = 6;
+    uint8_t GPA7 = 7;
+    uint8_t GPB0 = 8;
+    uint8_t GPB1 = 9;
+    uint8_t GPB2 = 10;
+    uint8_t GPB3 = 11;
+    uint8_t GPB4 = 12;
+    uint8_t GPB5 = 13;
+    uint8_t GPB6 = 14;
+    uint8_t GPB7 = 15;
 
     //For FN Key modifier
     uint8_t KEY_MOD_FN_ROW = 22;
